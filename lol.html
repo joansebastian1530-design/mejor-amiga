@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Para ti 💛</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contenedor {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 360px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #6a1b9a;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        button {
+            background: #6a1b9a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4a148c;
+        }
+
+        /* FOTO */
+        .foto {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .foto img {
+            width: 200px;
+            border-radius: 50%;
+            animation: resplandor 2s infinite alternate;
+        }
+
+        @keyframes resplandor {
+            from {
+                box-shadow: 0 0 10px #f48fb1;
+            }
+            to {
+                box-shadow: 0 0 30px 10px #ce93d8;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h1>Para ti 💛</h1>
+    <p id="mensaje">Haz clic cuando tu mente lo necesite</p>
+    <button onclick="mostrarMensaje()">Necesito un mensaje</button>
+
+    <div class="foto" id="fotoFinal">
+        <p><strong>Recuerda quién eres ✨</strong></p>
+        <img src="ella.jpg" alt="Tu luz sigue intacta">
+    </div>
+</div>
+
+<script>
+    let contador = 0;
+
+    const mensajes = [
+        "Este dolor no será para siempre 💪",
+        "Lo que terminó no define tu valor ✨",
+        "Eres fuerte incluso cuando lloras 🌱",
+        "Tu corazón está sanando poco a poco 💛",
+        "Mereces amor bonito, sin dudas 💖"
+    ];
+
+    function mostrarMensaje() {
+        const indice = Math.floor(Math.random() * mensajes.length);
+        document.getElementById("mensaje").textContent = mensajes[indice];
+
+        contador++;
+
+        if (contador >= 3) {
+            document.getElementById("fotoFinal").style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
